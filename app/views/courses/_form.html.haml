@@ -1,0 +1,43 @@
+= nested_form_for @course do |f|
+  = f.label :name
+  = f.text_field :name
+  %br
+  = f.label :tee_one_slope
+  = f.text_field :tee_one_slope, placeholder: "Back Tees Slope"
+  %br
+  = f.label :tee_one_rating
+  = f.text_field :tee_one_rating, placeholder: "Back Tees Rating"
+  %br
+  = f.label :tee_two_slope
+  = f.text_field :tee_two_slope, placeholder: "Middle Tees Slope"
+  %br
+  = f.label :tee_two_rating
+  = f.text_field :tee_two_rating, placeholder: "Middle Tees Rating"
+  %br
+  = f.label :tee_three_slope
+  = f.text_field :tee_three_slope, placeholder: "Front Tees Slope"
+  %br
+  = f.label :tee_three_rating
+  = f.text_field :tee_three_rating, placeholder: "Front Tees Rating"
+  %br
+  = f.label :tee_four_slope
+  = f.text_field :tee_four_slope, placeholder: "Forward Tees Slope"
+  %br
+  = f.label :tee_four_rating
+  = f.text_field :tee_four_rating, placeholder: "Forward Tees Rating"
+  %br
+  = f.fields_for :holes do |hole_form|
+    = hole_form.text_field :par, placeholder: "Par"
+    %br
+    = hole_form.text_field :tee_one_yardage, placeholder: "Back Tee Yardage"
+    %br
+    = hole_form.text_field :tee_two_yardage, placeholder: "Middle Tee Yardage"
+    %br
+    = hole_form.text_field :tee_three_yardage, placeholder: "Front Tee Yardage"
+    %br
+    = hole_form.text_field :tee_four_yardage, placeholder: "Forward Tee Yardage"
+    %br
+    = hole_form.link_to_remove "Remove this hole"
+  = f.link_to_add "Add a Hole", :holes
+  %br
+  = f.submit 'Save Course'

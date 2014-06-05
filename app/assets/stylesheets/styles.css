@@ -1,0 +1,31 @@
+a {
+  color: #109D18;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #108118;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+  color: #fff;
+  background-color: #109D18;
+}
+
+.nav{
+  padding:10px;
+}
+
+.navbar-header{
+  padding:10px;
+}
+
+body {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.container_body{
+  width: 225px;
+  margin: 0 auto;
+}
