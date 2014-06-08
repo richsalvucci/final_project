@@ -2,40 +2,43 @@
   = f.label :name
   = f.text_field :name
   %br
-  = f.label :tee_one_slope
-  = f.text_field :tee_one_slope, placeholder: "Back Tees Slope"
+  = f.label :back_tee_slope, "Back Tees Slope"
+  = f.text_field :back_tee_slope, placeholder: "Back Tees Slope"
   %br
-  = f.label :tee_one_rating
-  = f.text_field :tee_one_rating, placeholder: "Back Tees Rating"
+  = f.label :back_tee_rating,"Back Tees Rating"
+  = f.text_field :back_tee_rating, placeholder: "Back Tees Rating"
   %br
-  = f.label :tee_two_slope
-  = f.text_field :tee_two_slope, placeholder: "Middle Tees Slope"
+  = f.label :middle_tee_slope,"Middle Tees Slope"
+  = f.text_field :middle_tee_slope, placeholder: "Middle Tees Slope"
   %br
-  = f.label :tee_two_rating
-  = f.text_field :tee_two_rating, placeholder: "Middle Tees Rating"
+  = f.label :middle_tee_rating,"Middle Tees Rating"
+  = f.text_field :middle_tee_rating, placeholder: "Middle Tees Rating"
   %br
-  = f.label :tee_three_slope
-  = f.text_field :tee_three_slope, placeholder: "Front Tees Slope"
+  = f.label :front_tee_slope, "Front Tees Slope"
+  = f.text_field :front_tee_slope, placeholder: "Front Tees Slope"
   %br
-  = f.label :tee_three_rating
-  = f.text_field :tee_three_rating, placeholder: "Front Tees Rating"
+  = f.label :front_tee_rating, "Front Tees Rating"
+  = f.text_field :front_tee_rating, placeholder: "Front Tees Rating"
   %br
-  = f.label :tee_four_slope
-  = f.text_field :tee_four_slope, placeholder: "Forward Tees Slope"
+  = f.label :forward_tee_slope, "Forward Tees Slope"
+  = f.text_field :forward_tee_slope, placeholder: "Forward Tees Slope"
   %br
-  = f.label :tee_four_rating
-  = f.text_field :tee_four_rating, placeholder: "Forward Tees Rating"
+  = f.label :forward_tee_rating, "Forward Tees Rating"
+  = f.text_field :forward_tee_rating, placeholder: "Forward Tees Rating"
   %br
   = f.fields_for :holes do |hole_form|
+    %br
+    = hole_form.label :par, "Hole"
+    %br
     = hole_form.text_field :par, placeholder: "Par"
     %br
-    = hole_form.text_field :tee_one_yardage, placeholder: "Back Tee Yardage"
+    = hole_form.text_field :back_tee_yardage, placeholder: "Back Tee Yardage"
     %br
-    = hole_form.text_field :tee_two_yardage, placeholder: "Middle Tee Yardage"
+    = hole_form.text_field :middle_tee_yardage, placeholder: "Middle Tee Yardage"
     %br
-    = hole_form.text_field :tee_three_yardage, placeholder: "Front Tee Yardage"
+    = hole_form.text_field :front_tee_yardage, placeholder: "Front Tee Yardage"
     %br
-    = hole_form.text_field :tee_four_yardage, placeholder: "Forward Tee Yardage"
+    = hole_form.text_field :forward_tee_yardage, placeholder: "Forward Tee Yardage"
     %br
     = hole_form.link_to_remove "Remove this hole"
   = f.link_to_add "Add a Hole", :holes

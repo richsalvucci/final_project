@@ -1,0 +1,15 @@
+= nested_form_for @round do |f|
+  =f.label :course_id
+  =f.select :course_id, options_for_select(@courses.map{|cour| [cour.name, cour.id]}), include_blank:'--- Select ---' 
+  %br
+  = f.fields_for :user_rounds do |user_form|
+    = user_form.label :tee
+    = user_form.select :tee, options_for_select(Round::TEE), include_blank:'--- Select ---' 
+    %br
+    %div.user_name
+      = user_form.label :user_name
+      = user_form.text_field :user_name
+      = user_form.link_to_remove "Remove this player"
+  = f.link_to_add "Add a Player", :user_rounds
+  %br
+  = f.submit 'Save Round'

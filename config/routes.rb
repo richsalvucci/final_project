@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     resources :holes
   end
 
+  resources :rounds
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

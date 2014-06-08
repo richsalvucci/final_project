@@ -33,6 +33,7 @@ gem 'omniauth'
 gem 'html2haml'
 gem 'nested_form'
 gem 'omniauth-facebook'
+gem 'jquery-ui-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

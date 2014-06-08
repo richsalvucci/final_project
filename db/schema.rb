@@ -11,40 +11,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140605145753) do
+ActiveRecord::Schema.define(version: 20140607191040) do
 
   create_table "courses", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "tee_one_rating",   precision: 10, scale: 0
-    t.decimal  "tee_two_rating",   precision: 10, scale: 0
-    t.decimal  "tee_three_rating", precision: 10, scale: 0
-    t.decimal  "tee_four_rating",  precision: 10, scale: 0
-    t.decimal  "tee_one_slope",    precision: 10, scale: 0
-    t.decimal  "tee_two_slope",    precision: 10, scale: 0
-    t.decimal  "tee_three_slope",  precision: 10, scale: 0
-    t.decimal  "tee_four_slope",   precision: 10, scale: 0
+    t.decimal  "back_tee_rating",    precision: 10, scale: 0
+    t.decimal  "middle_tee_rating",  precision: 10, scale: 0
+    t.decimal  "front_tee_rating",   precision: 10, scale: 0
+    t.decimal  "forward_tee_rating", precision: 10, scale: 0
+    t.decimal  "back_tee_slope",     precision: 10, scale: 0
+    t.decimal  "middle_tee_slope",   precision: 10, scale: 0
+    t.decimal  "front_tee_slope",    precision: 10, scale: 0
+    t.decimal  "forward_tee_slope",  precision: 10, scale: 0
   end
 
   create_table "holes", force: true do |t|
-    t.integer  "tee_one_yardage"
-    t.integer  "tee_two_yardage"
-    t.integer  "tee_three_yardage"
-    t.integer  "tee_four_yardage"
+    t.integer  "back_tee_yardage"
+    t.integer  "middle_tee_yardage"
+    t.integer  "front_tee_yardage"
+    t.integer  "forward_tee_yardage"
     t.integer  "par"
     t.integer  "course_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "rounds", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "course_id"
+    t.integer  "front_total"
+    t.integer  "back_total"
+    t.integer  "round_total"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "tee"
+  end
+
+  create_table "user_rounds", force: true do |t|
+    t.integer  "round_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "tee"
+    t.string   "user_name"
+  end
+
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                                           default: "", null: false
+    t.string   "encrypted_password",                              default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                                   default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -56,6 +76,7 @@ ActiveRecord::Schema.define(version: 20140605145753) do
     t.string   "provider"
     t.string   "name"
     t.string   "uid"
+    t.decimal  "handicap",               precision: 10, scale: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

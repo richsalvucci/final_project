@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  has_many :user_rounds
+  has_many :rounds, through: :user_rounds
+  has_many :scores
 
   def self.from_omniauth(auth)
     puts auth.inspect

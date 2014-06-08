@@ -1,12 +1,12 @@
 .header
   %ul.nav.nav-pills.pull-right
-    %li.active
+    %li{ class: active_tab("courses") }
       = link_to "Courses", courses_path
-    %li
-      %a{:href => "javascript:void(0)"} Rounds
+    %li{ class: active_tab("rounds") }
+      = link_to "Rounds", rounds_path
     %li
       %a{:href => "javascript:void(0)"} Handicap
-    %li
+    %li{ class: active_tab("login/logout") }
       - if user_signed_in? 
         = link_to('Logout', destroy_user_session_path, method: :delete)
       - else
