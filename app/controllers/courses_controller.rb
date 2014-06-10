@@ -5,7 +5,7 @@ class CoursesController < ApplicationController
   end
 
   def show
-    
+    @holes = @course.holes.all
   end
 
   def new
@@ -45,12 +45,16 @@ private
       :tee_three_rating,
       :tee_four_slope,
       :tee_four_rating,
-      holes_attributes: [:course_id, 
+      holes_attributes: [:id,
+        :course_id, 
+        :hole_number,
         :par,
         :tee_one_yardage,
         :tee_two_yardage,
         :tee_three_yardage,
         :tee_four_yardage,
+        :mens_handicap,
+        :womens_handicap,
         :_destroy])
   end
 end

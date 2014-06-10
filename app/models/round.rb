@@ -9,4 +9,18 @@ class Round < ActiveRecord::Base
     "Front",
     "Forward"
   ] 
+
+  validate :foursome
+
+  def foursome
+    p '*'*100
+    p self.user_rounds
+    p self.user_rounds.length
+    p '*'*100
+    if self.user_rounds.length >= 4
+      errors.add(:you,  "can only have four golfers")
+    end
+  end
+  
+
 end

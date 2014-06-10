@@ -28,7 +28,9 @@
   %br
   = f.fields_for :holes do |hole_form|
     %br
-    = hole_form.label :par, "Hole"
+    = hole_form.label :hole_number, "Hole"
+    %br
+    = hole_form.text_field :hole_number, placeholder: "Hole"
     %br
     = hole_form.text_field :par, placeholder: "Par"
     %br
@@ -39,6 +41,10 @@
     = hole_form.text_field :front_tee_yardage, placeholder: "Front Tee Yardage"
     %br
     = hole_form.text_field :forward_tee_yardage, placeholder: "Forward Tee Yardage"
+    %br
+    = hole_form.text_field :mens_handicap, placeholder: "Men's Handicap"
+    %br
+    = hole_form.text_field :womens_handicap, placeholder: "Women's Handicap"
     %br
     = hole_form.link_to_remove "Remove this hole"
   = f.link_to_add "Add a Hole", :holes

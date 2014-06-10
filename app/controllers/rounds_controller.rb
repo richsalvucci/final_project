@@ -14,8 +14,15 @@ class RoundsController < ApplicationController
   end
 
   def create
-    @round = Round.create round_params
-    redirect_to rounds_path
+    @courses = Course.all
+    @round = Round.new round_params
+    if @round.save
+      flash[:notice] = "Thank You"
+     redirect_to rounds_path
+    else
+      flash[:error] = "You can only have four golfers per round."
+      render :new
+    end
   end
 
   def edit
@@ -31,12 +38,24 @@ class RoundsController < ApplicationController
     @round.delete
     redirect_to rounds_path
   end
+
+  def user_name
+    @user = User.order(:name).where("name like ?", "%#{params[:term]}%")
+    # render json: [{ label: "awesome", value:"possum" }, { label: "awesome2", value:"possum2" }]
+    render json: @user.map{|u| {label: u.name, id: u.id}}
+  end
 private
   def find_round
     @round = Round.find params[:id]
   end
   def round_params
-    params.require(:round).permit(:user_id, :course_id, :tee, :front_total, :back_total, :round_total)
+    params.require(:round).permit(:user_id, :course_id, :tee, :front_total, :back_total, :round_total,
+      user_rounds_attributes: [:id, 
+        :user_id,
+        :round_id,
+        :tee,
+        :user_name,
+        :_destroy])
   end
 
 end

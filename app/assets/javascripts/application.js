@@ -15,10 +15,17 @@
 //= require jquery_ujs
 //= require jquery_nested_form
 //= require bootstrap.min.js
+//= require angular.min
+//= require angular-route.min
 //= require turbolinks
 //= require_tree .
 
 var load_javascript = function(){
+
+  $(".notice").fadeOut(1000);
+  $(".alert").fadeOut(1000);
+  $(".error").fadeOut(1000);
+
   $("ul.nav").children().click(function(){ 
     $("ul.nav li").removeClass("active");
     console.log($(this))

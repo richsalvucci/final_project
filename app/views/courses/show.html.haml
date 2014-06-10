@@ -1,0 +1,75 @@
+%h3 
+  =@course.name
+%table.table.table-responsive
+  %thead
+    %th
+      Hole
+    %th
+      Par
+    %th
+      Back Tees
+    %th
+      Middle Tees
+    %th
+      Front Tees
+    %th
+      Forward Tees
+    %th
+      Handicap
+    
+
+  %tbody
+    - @holes.each do |hole|
+      %tr
+        %td 
+          =hole.hole_number
+        %td 
+          =hole.par
+        %td 
+          =hole.back_tee_yardage
+        %td 
+          =hole.middle_tee_yardage
+        %td 
+          =hole.front_tee_yardage
+        %td 
+          =hole.forward_tee_yardage
+        %td 
+          =hole.mens_handicap
+    %tr
+      %td
+        Total
+      %td
+        =@holes.sum(:par)
+      %td
+        =@holes.sum(:back_tee_yardage)
+      %td
+        =@holes.sum(:middle_tee_yardage)
+      %td
+        =@holes.sum(:front_tee_yardage)
+      %td
+        =@holes.sum(:forward_tee_yardage)
+      %td
+          
+%h4
+  Ratings and Slope
+%p
+  Back Tees
+  =@course.back_tee_rating 
+  |
+  =@course.back_tee_slope
+  %br
+  Middle Tees
+  =@course.middle_tee_rating 
+  |
+  =@course.middle_tee_slope
+  %br
+  Front Tees
+  =@course.front_tee_rating 
+  |
+  =@course.front_tee_slope
+  %br
+  Forward Tees
+  =@course.forward_tee_rating 
+  |
+  =@course.forward_tee_slope
+        
