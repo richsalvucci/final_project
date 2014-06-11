@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   end
 
   resources :rounds do
+    resources :scores
     collection do
         get :user_name
       end

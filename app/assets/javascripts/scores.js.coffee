@@ -9,3 +9,13 @@
 #= require_tree ./filters
 
 Score = angular.module("Score", ['ngRoute'])
+
+Score.config(["$routeProvider", ($routeProvider) ->
+
+
+
+])
+
+Score.config(['$httpProvider', (provider) ->
+  provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
+])
