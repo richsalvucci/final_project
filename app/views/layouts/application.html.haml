@@ -1,5 +1,5 @@
 !!!
-%html
+%html{:lang => "en", ng: {app: "Score"}}
   %head
     %meta{:charset => "utf-8"}
     %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
@@ -7,8 +7,8 @@
     %meta{:content => "", :name => "description"}
     %meta{:content => "", :name => "author"}
     %title Golf Trax
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', controller_name, 'data-turbolinks-track' => true
     = csrf_meta_tags
 
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>

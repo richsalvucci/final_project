@@ -18,7 +18,7 @@ class RoundsController < ApplicationController
     @round = Round.new round_params
     if @round.save
       flash[:notice] = "Thank You"
-     redirect_to round_scores_path
+     redirect_to round_scores_path(@round)
     else
       flash[:error] = "You can only have four golfers per round."
       render :new

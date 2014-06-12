@@ -1,8 +1,10 @@
 class ScoresController < ApplicationController
-   def index 
+  def index 
+    
     @scores = Score.all
 
     respond_to do |format|
+      format.html
       format.json { render json: @scores.as_json }
     end
   end
