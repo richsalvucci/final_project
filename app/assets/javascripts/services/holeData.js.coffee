@@ -1,5 +1,4 @@
-angular.module("Score").factory("holeData", ['$http', ($http) ->
-
+angular.module("Score").factory("holeData", ['$http', ( $http) ->
   holeData =
     data:
       holes:[
@@ -19,7 +18,7 @@ angular.module("Score").factory("holeData", ['$http', ($http) ->
   holeData.loadHoles = (hole) ->
     console.log "dookie"
     if holeData.isLoaded == false
-      $http.get("/scores.json").success( (data) ->
+      $http.get("/rounds/"+window.location.pathname.split("/")[2]+"/scores.json").success( (data) ->
         holeData.data.holes = data
         holeData.isLoaded = true
         console.log "Success"

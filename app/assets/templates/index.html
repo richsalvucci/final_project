@@ -2,21 +2,9 @@
 
 <table class="table table-bordered">
   <tbody>
-    <tr ng-repeat= "hole in data.holes">
-      <th>Hole</th>
-      <th>{{hole.hole_number}}</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+    <tr>
+      <td>Hole</td>
+      <td ng-repeat= "hole in data.holes">{{data.hole.hole_number}}</td>
     </tr>
     <tr>
       <td>Back Tee</td>

@@ -5,6 +5,7 @@ var round_javascript = function(){
   $(document.body).on("focus", ".user_name", function() {
     $(this).autocomplete({
       source: "/rounds/user_name",
+      minLength: 3,
       select: function( event, ui ) {
         $(this).siblings(".user_id").val(ui.item.id)
       }

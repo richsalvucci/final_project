@@ -1,6 +1,6 @@
 class ScoresController < ApplicationController
   def index 
-    
+
     @scores = Score.all
 
     respond_to do |format|
@@ -36,6 +36,6 @@ class ScoresController < ApplicationController
   end  
 private
   def score_params
-    params.require(:score).permit(:score, :user_id, :round_id)  
+    params.require(:score).permit(:score, :user_id, :round_id, :user_name)  
   end
 end

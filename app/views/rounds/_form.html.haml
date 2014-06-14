@@ -1,4 +1,4 @@
-%div.round_form
+%div.row
   = nested_form_for @round do |f|
     = render 'layouts/error_messages', object: @round
     =f.label :course_id
@@ -6,7 +6,7 @@
     %br
     = f.fields_for :user_rounds do |user_form|
       = user_form.label :tee
-      = user_form.select :tee, options_for_select(Round::TEE), include_blank:'--- Select ---' 
+      = user_form.select :tee, options_for_select(Round::TEE), include_blank:'--- Select ---', class: "tee" 
       %br
       %div.user_name
         = user_form.label :user_name

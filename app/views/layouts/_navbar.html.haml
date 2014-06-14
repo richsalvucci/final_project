@@ -6,7 +6,7 @@
       = link_to "Rounds", rounds_path
     %li
       %a{:href => "javascript:void(0)"} Handicap
-    %li{ class: active_tab("login/logout") }
+    %li{ class: active_tab("sessions") }
       - if user_signed_in? 
         = link_to('Logout', destroy_user_session_path, method: :delete)
       - else

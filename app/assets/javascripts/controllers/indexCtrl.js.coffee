@@ -2,6 +2,7 @@
   console.log($routeParams)
   $scope.title = "Score Card"
   $scope.data = holeData.data
+  $scope.roundId = window.location.pathname.split("/")[2]
 
   # console.log "hey there"
   # $scope.data =

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140611155842) do
+ActiveRecord::Schema.define(version: 20140614174210) do
 
   create_table "courses", force: true do |t|
     t.string   "name"
@@ -25,6 +25,13 @@ ActiveRecord::Schema.define(version: 20140611155842) do
     t.decimal  "middle_tee_slope",   precision: 10, scale: 0
     t.decimal  "front_tee_slope",    precision: 10, scale: 0
     t.decimal  "forward_tee_slope",  precision: 10, scale: 0
+  end
+
+  create_table "handicaps", force: true do |t|
+    t.decimal  "index",      precision: 10, scale: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "holes", force: true do |t|
@@ -59,6 +66,7 @@ ActiveRecord::Schema.define(version: 20140611155842) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "user_name"
+    t.integer  "user_round_id"
   end
 
   create_table "user_rounds", force: true do |t|
@@ -89,6 +97,7 @@ ActiveRecord::Schema.define(version: 20140611155842) do
     t.string   "name"
     t.string   "uid"
     t.decimal  "handicap",               precision: 10, scale: 0
+    t.decimal  "index",                  precision: 10, scale: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

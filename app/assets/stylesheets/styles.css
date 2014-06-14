@@ -31,7 +31,15 @@ body {
 }
 
 .output {
-    display: inline-block;
-    border: 1px solid #EEE;
-    padding: 2.3pt;
-  }
+  display: inline-block;
+  border: 1px solid #EEE;
+  padding: 2.3pt;
+}
+
+label{
+  width: 7em;
+  margin-right: 0.5em;
+  display:inline-block;
+}
+
+
