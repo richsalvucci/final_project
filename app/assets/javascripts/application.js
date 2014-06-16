@@ -27,10 +27,10 @@ var load_javascript = function(){
   $(".alert").fadeOut(1000);
   $(".error").fadeOut(1000);
 
-  $("ul.nav").children().click(function(){ 
+  $("ul.nav").children().click(function(event){ 
     $("ul.nav li").removeClass("active");
-    console.log($(this))
-    $(this).toggleClass("active");
+    console.log(event)
+    $(event.target).parent().addClass("active");
     console.log("do i get here");
   });  
 }

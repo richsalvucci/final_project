@@ -1,0 +1,33 @@
+%h1 
+  =@round.course.name
+%h4
+  =@round.created_at.strftime("%b %d, %Y")
+%table.table.table-responsive.table-bordered
+  %tbody
+    %tr
+      %td 
+        Hole
+      - @holes.each do |hole|
+        %td 
+          =hole.hole_number
+      %td
+        T
+    %tr
+      %td 
+        Par
+      - @holes.each do |hole|
+        %td 
+          =hole.par
+      %td
+        = @holes.sum(:par)    
+    %tr
+      %td
+        Score 
+      - @round.scores.each do |score|
+        %td 
+          =score.score
+      %td
+        =@round.scores.sum(:score)
+%br
+.btn
+  = link_to "Rounds", rounds_path, class: "btn btn-default"

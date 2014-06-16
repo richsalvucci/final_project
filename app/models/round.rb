@@ -11,8 +11,20 @@ class Round < ActiveRecord::Base
     "Forward"
   ] 
 
-  
+
   validate :foursome
+
+  def total_score
+    self.scores.sum(:score)
+  end 
+
+  def round_front
+    self.scores.score[0..8].sum(:score)
+  end
+
+  def round_back
+    self.scores.score[9..17].sum(:score)
+  end 
 
   def foursome
     p '*'*100
@@ -23,9 +35,4 @@ class Round < ActiveRecord::Base
       errors.add(:you,  "can only have four golfers")
     end
   end
-
-  
-
-  
-
 end

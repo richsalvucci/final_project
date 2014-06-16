@@ -1,11 +1,15 @@
 class RoundsController < ApplicationController
-  before_filter :find_round, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_filter :find_round, only: [:show, :edit, :update, :destroy, :round_front, :round_back, :total_score]
   def index
     @rounds = Round.all
+    @course = Course.all
   end
 
   def show
-    
+
+    @holes = Hole.all
+    @scores = @round.scores.all
   end
 
   def new
@@ -44,6 +48,7 @@ class RoundsController < ApplicationController
     # render json: [{ label: "awesome", value:"possum" }, { label: "awesome2", value:"possum2" }]
     render json: @user.map{|u| {label: u.name, id: u.id}}
   end
+   
 private
   def find_round
     @round = Round.find params[:id]

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
+  get 'handicap' => 'home#handicap'
+
   resources :courses do
     resources :holes
   end

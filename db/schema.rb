@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140614174210) do
+ActiveRecord::Schema.define(version: 20140615123222) do
 
   create_table "courses", force: true do |t|
     t.string   "name"
@@ -28,10 +28,11 @@ ActiveRecord::Schema.define(version: 20140614174210) do
   end
 
   create_table "handicaps", force: true do |t|
-    t.decimal  "index",      precision: 10, scale: 0
+    t.decimal  "handicap_index",        precision: 10, scale: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.integer  "handicap_differential"
   end
 
   create_table "holes", force: true do |t|
