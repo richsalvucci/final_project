@@ -2,22 +2,25 @@ class ScoresController < ApplicationController
   before_action :authenticate_user!
   before_filter :find_round
   def index 
-    @scores = {round_id: @round.scores.first.round_id,
-          user_id: @round.scores.first.user_id,
-          user_name: @round.scores.first.user_name,
-          user_round_id: @round.scores.first.user_round_id,
-          hole_number: @round.scores.first.hole_number,
-          par: @round.scores.first.par,
-          back_tee_yardage: @round.scores.first.back_tee_yardage,
-          middle_tee_yardage: @round.scores.first.middle_tee_yardage,
-          front_tee_yardage: @round.scores.first.front_tee_yardage,
-          forward_tee_yardage: @round.scores.first.forward_tee_yardage,
-          mens_handicap: @round.scores.first.mens_handicap
+    @scores = @round.scores.each do |score|
+      {round_id: score.round_id,
+          user_id: score.user_id,
+          user_name: score.user_name,
+          user_round_id: score.user_round_id,
+          hole_number: score.hole_number,
+          par: score.par,
+          back_tee_yardage: score.back_tee_yardage,
+          middle_tee_yardage: score.middle_tee_yardage,
+          front_tee_yardage: score.front_tee_yardage,
+          forward_tee_yardage: score.forward_tee_yardage,
+          mens_handicap: score.mens_handicap
         }
-    p @scores
+    end
+    @data = @scores.group_by(&:user_name)
+    p @data
     respond_to do |format|
       format.html
-      format.json { render json: @scores.as_json }
+      format.json { render json: @data.as_json }
     end
   end
 

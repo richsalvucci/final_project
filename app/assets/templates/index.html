@@ -1,11 +1,13 @@
 <table class="table table-bordered">
   <tbody>
+    <!-- {{data.holes}} -->
     <tr>
-      <td>Hole<!-- {{ data.holes data.holes[0] data.holes[0][0] }} --></td>
-      
-      <td ng-repeat= "hole in data.holes">{{hole.hole_number}}</td>
+      <td>Hole</td>
+      <td ng-repeat="hole in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]">
+        {{ hole }}
+      </td>
     </tr>
-    <tr>
+<!--     <tr>
       <td>Back Tee</td>
       <td ng-repeat= "hole in data.holes">{{hole.back_tee_yardage}}</td>
     </tr>
@@ -27,33 +29,9 @@
     </tr>
     <tr>
       <td ng-repeat="user in users">{{user.user_name}}</td>
-      <tdng-repeat="user in users">{{user.user_name.last}}</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
       <td></td>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
       <td></td>
       <td></td>
     </tr>
@@ -61,37 +39,12 @@
       <td>Par</td>
       <td ng-repeat= "hole in data.holes">{{hole.par}}</td>
     </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+ -->
+    <tr ng-repeat="(key, value) in data.holes">
+      <td>{{key}}</td>
+      <td ng-repeat="hole in value">
+        {{ hole.score }}
+      </td>
     </tr>
   </tbody>
 </table>

@@ -9,9 +9,24 @@ angular.module("Score").factory("scoreData", ['$http', ($http) ->
           user_round_id:"",
         }
       ]
-    isLoaded: false 
+    isLoaded: false
+    
 
-
+  scoreData.updatescore = (formData) ->
+    console.log "Howzit?"
+    data =
+      score:
+        score:formData.editScoreScore
+    console.log "dude"          
+    console.log formData
+    $http.put("/rounds/"+window.location.pathname.split("/")[2]+"/scores.json", data).success( (data) ->
+      console.log(data)
+      score = _.findWhere(scoreData.data.scores, {id: parseInt(formData.editScoreId)})
+      score.score = data.score
+      console.log "A score was updated"
+    ).error( ->
+      console.log "No score was not updated"
+    )
 
 
 
@@ -22,17 +37,3 @@ angular.module("Score").factory("scoreData", ['$http', ($http) ->
   return scoreData
 ])
 
-{ 
-  user_rounds: [
-    {
-      user_name: "Rich"
-      scores: [
-      ]
-    },
-    {
-      user_name: "Gene",
-      scores: [
-      ]
-    }
-  ]
-}

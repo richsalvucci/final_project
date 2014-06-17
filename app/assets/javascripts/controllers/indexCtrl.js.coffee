@@ -1,10 +1,9 @@
-@IndexCtrl = ($scope, $location, $http, $routeParams, $q, holeData, userData) ->
+@IndexCtrl = ($scope, $location, $http, $routeParams, $q, holeData, userData, scoreData) ->
   console.log($routeParams)
   $scope.title = "Score Card"
   $scope.data = holeData.data
   $scope.roundId = window.location.pathname.split("/")[2]
   $scope.users= userData.data
-
 
   # console.log "hey there"
   # $scope.data =
