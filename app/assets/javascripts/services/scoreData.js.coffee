@@ -5,7 +5,8 @@ angular.module("Score").factory("scoreData", ['$http', ($http) ->
         {
           score:"",
           user_name:"",
-          round_id:""
+          round_id:"",
+          user_round_id:"",
         }
       ]
     isLoaded: false 
@@ -20,3 +21,18 @@ angular.module("Score").factory("scoreData", ['$http', ($http) ->
 
   return scoreData
 ])
+
+{ 
+  user_rounds: [
+    {
+      user_name: "Rich"
+      scores: [
+      ]
+    },
+    {
+      user_name: "Gene",
+      scores: [
+      ]
+    }
+  ]
+}

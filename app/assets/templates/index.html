@@ -1,94 +1,33 @@
-<h1>Test</h1>
-
 <table class="table table-bordered">
   <tbody>
     <tr>
-      <td>Hole</td>
-      <td ng-repeat= "hole in data.holes">{{data.hole.hole_number}}</td>
+      <td>Hole<!-- {{ data.holes data.holes[0] data.holes[0][0] }} --></td>
+      
+      <td ng-repeat= "hole in data.holes">{{hole.hole_number}}</td>
     </tr>
     <tr>
       <td>Back Tee</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td ng-repeat= "hole in data.holes">{{hole.back_tee_yardage}}</td>
     </tr>
     <tr>
       <td>Middle Tee</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td ng-repeat= "hole in data.holes">{{hole.middle_tee_yardage}}</td>
     </tr>
     <tr>
       <td>Front Tee</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td ng-repeat= "hole in data.holes">{{hole.front_tee_yardage}}</td>
     </tr>
     <tr>
       <td>Forward Tee</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td ng-repeat= "hole in data.holes">{{hole.forward_tee_yardage}}</td>
     </tr>
     <tr>
       <td>Handicap</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td ng-repeat= "hole in data.holes">{{hole.mens_handicap}}</td>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
+      <td ng-repeat="user in users">{{user.user_name}}</td>
+      <tdng-repeat="user in users">{{user.user_name.last}}</td>
       <td></td>
       <td></td>
       <td></td>
@@ -120,35 +59,7 @@
     </tr>
     <tr>
       <td>Par</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td ng-repeat= "hole in data.holes">{{hole.par}}</td>
     </tr>
     <tr>
       <td></td>

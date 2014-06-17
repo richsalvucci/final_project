@@ -1,8 +1,10 @@
-@IndexCtrl = ($scope, $location, $http, $routeParams, $q, holeData) ->
+@IndexCtrl = ($scope, $location, $http, $routeParams, $q, holeData, userData) ->
   console.log($routeParams)
   $scope.title = "Score Card"
   $scope.data = holeData.data
   $scope.roundId = window.location.pathname.split("/")[2]
+  $scope.users= userData.data
+
 
   # console.log "hey there"
   # $scope.data =
@@ -43,8 +45,19 @@
     $scope.data.currentHole.course_id = hole.course_id
 
   @hole = $q.defer()
-  # @hole.promise.then($scope.findHoleById)
   holeData.loadHoles(@hole)
+
+  console.log "user hi"
+  $scope.findUserByName = ->
+    console.log "did i make it"
+    user = _.findWhere(userData.data.users, {name: $scope.data.userName})
+    $scope.data.currentUser.user_name = user.user_name
+    $scope.data.currentUser.user_round_id = user.user_round_id
+    $scope.data.currentUser.round_id = user.round_id
+    $scop.data.currentUser.score = user.score
+
+  @user = $q.defer()
+  userData.loadUsers(@user)
 
 
 
