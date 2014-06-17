@@ -43,7 +43,7 @@
     <tr ng-repeat="(key, value) in data.holes">
       <td>{{key}}</td>
       <td ng-repeat="hole in value">
-        {{ hole.score }}
+        {{ hole.score }} <input ng-model="hole.score">
       </td>
     </tr>
   </tbody>

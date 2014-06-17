@@ -58,6 +58,13 @@
   @user = $q.defer()
   userData.loadUsers(@user)
 
+  console.log "hi edit"
+  $scope.editScore = ->
+    console.log "are we editing"
+    console.log $scope.formData
+    scoreData.updateScore($scope.formData)
+
+
 
 
   # set up data
