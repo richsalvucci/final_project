@@ -59,16 +59,19 @@
   userData.loadUsers(@user)
 
   console.log "hi edit"
-  $scope.editScore = ->
-    console.log "are we editing"
-    console.log $scope.formData
-    scoreData.updateScore($scope.formData)
+  $scope.updateScore = ->
+    console.log($scope.data)
+    console.log(scoreData)
+    scoreData.updateScore($scope.data)
+    
 
 
 
 
-  # set up data
+  # pass the data to controller by http post
 
-  # load all of the hole data
+  # loop through each user
+  # loop through each score
+  # update scores
 
   # on your view, use the data you just grabbed and render it
