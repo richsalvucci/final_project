@@ -46,4 +46,11 @@ label{
   display:inline-block;
 }
 
+.hole_input{
+  width: 1.5em;
+  border-radius: 20px;
+  text-align: center;
+  
+}
+
 

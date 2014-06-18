@@ -14,12 +14,10 @@ angular.module("Score").factory("scoreData", ['$http', ($http) ->
 
   scoreData.updateScore = (formData) ->
     console.log "Howzit?"
-    data =
-      score:
-        score:formData.editScoreScore
+    
     console.log "dude"          
     console.log formData
-    $http.post("/rounds/"+window.location.pathname.split("/")[2]+"/scores.json", data).success( (data) ->
+    $http.post("/rounds/'window.location.pathname.split("/")[2]'/scores.json", formData).success( (data) ->
       console.log(data)
       score = _.findWhere(scoreData.data.scores, {id: parseInt(formData.editScoreId)})
       score.score = data.score

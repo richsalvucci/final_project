@@ -17,7 +17,7 @@ class ScoresController < ApplicationController
         }
     end
     @data = @scores.group_by(&:user_name)
-    p @data
+    # p @data
     respond_to do |format|
       format.html
       format.json { render json: @data.as_json }
@@ -25,10 +25,18 @@ class ScoresController < ApplicationController
   end
 
   def create
-    @score = Score.create score_params
+    @score = params[:holes].each do |key, value|
+      value.each do |score|
+       p  score[:score]
+       p score[:id]
+       dude = @round.scores.find score[:id]
+       dude.update_attributes score: score[:score]
+      end 
+    end
+
 
     respond_to do |format|
-      format.json { render json: @score.as_json }
+      format.html 
     end
   end
 

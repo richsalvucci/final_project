@@ -12,6 +12,7 @@ Score = angular.module("Score", ['ngRoute'])
 
 Score.config(["$routeProvider", ($routeProvider) ->
 
+
   $routeProvider.otherwise({ templateUrl: '/assets/index.html', controller: "IndexCtrl"})
 ])
 
