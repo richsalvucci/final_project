@@ -5,6 +5,14 @@
   $scope.roundId = window.location.pathname.split("/")[2]
   $scope.users= userData.data
 
+  # $scope.totalScore = ->
+  #   total = 0
+  #   i = 0
+  console.log($scope.data)
+  console.log "testr"
+
+    # while i < $scope.hole.score.length
+
   # console.log "hey there"
   # $scope.data =
   #   holeData: holeData.data
