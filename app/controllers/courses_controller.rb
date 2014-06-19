@@ -6,6 +6,7 @@ class CoursesController < ApplicationController
   end
 
   def show
+    @hole = @course.holes.sort_by(&:hole_number)
     @holes = @course.holes.all
   end
 
