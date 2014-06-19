@@ -37,3 +37,5 @@
   @hole = $q.defer()
   @hole.promise.then($scope.findHoleById)
   holeData.loadHoles(@hole)
+
+@HoleCtrl.inject = ['$scope', '$location', '$routeParams', 'holeData', '$q']
