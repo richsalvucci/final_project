@@ -2,7 +2,7 @@ class RoundsController < ApplicationController
   before_action :authenticate_user!
   before_filter :find_round, only: [:show, :edit, :update, :destroy, :round_front, :round_back, :total_score]
   def index
-    @rounds = Round.where(user_id: current_user)
+    @rounds = Round.all
     @course = Course.all
   end
 
