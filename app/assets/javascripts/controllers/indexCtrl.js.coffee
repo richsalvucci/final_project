@@ -73,13 +73,5 @@
     scoreData.updateScore($scope.data)
     
 
+@IndexCtrl.inject = ['$scope', '$location', '$http', '$routeParams', '$q', 'holeData', 'userData', 'scoreData']
 
-
-
-  # pass the data to controller by http post
-
-  # loop through each user
-  # loop through each score
-  # update scores
-
-  # on your view, use the data you just grabbed and render it
