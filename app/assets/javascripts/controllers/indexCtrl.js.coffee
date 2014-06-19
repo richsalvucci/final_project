@@ -73,5 +73,5 @@
     scoreData.updateScore($scope.data)
     
 
-@IndexCtrl.inject = ['$scope', '$location', '$http', '$routeParams', '$q', 'holeData', 'userData', 'scoreData']
+@IndexCtrl.$inject = ['$scope', '$location', '$http', '$routeParams', '$q', 'holeData', 'userData', 'scoreData']
 
