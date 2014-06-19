@@ -23,11 +23,11 @@
     %tr
       %td
         Score 
-      - @round.scores.each do |score|
+      - @scores.each do |score|
         %td 
           =score.score
       %td
-        =@round.scores.sum(:score)
+        =@scores.sum(:score)
 %br
 .btn
   = link_to "Rounds", rounds_path, class: "btn btn-default"

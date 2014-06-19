@@ -33,10 +33,8 @@ class ScoresController < ApplicationController
        dude.update_attributes score: score[:score]
       end 
     end
-
-
     respond_to do |format|
-      format.html 
+      format.js 
     end
   end
 
