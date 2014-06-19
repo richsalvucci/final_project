@@ -4,8 +4,8 @@
       = link_to "Courses", courses_path
     %li{ class: active_tab("rounds") }
       = link_to "Rounds", rounds_path
-    %li{ class: active_tab("handicap") }
-      = link_to "Handicap", handicap_path
+    / %li{ class: active_tab("handicap") }
+    /   = link_to "Handicap", handicap_path
     %li{ class: active_tab("sessions") }
       - if user_signed_in? 
         = link_to('Logout', destroy_user_session_path, method: :delete)

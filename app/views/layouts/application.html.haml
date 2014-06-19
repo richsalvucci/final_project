@@ -14,17 +14,29 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   %body
-    / Fixed navbar
-    .navbar.navbar-fixed-top{:role => "navigation"}
-      .container
-        .navbar-header
-          = link_to "Golf Trax", root_path, class: "navbar-brand"
-        .navbar-collapse.collapse
-          = render 'layouts/navbar'
-    .container_body
+    .container
+      / .navbar.navbar-fixed-top{:role => "navigation"}
+      .navbar-header
+        = link_to "Golf Trax", root_path, class: "navbar-brand"
+      .navbar-collapse.collapse
+        = render 'layouts/navbar'
       .row.marketing
         .col-lg-6
           - if notice || alert
             %p.notice= notice
             %p.alert= alert
           = yield
+
+    / Fixed navbar
+    / .navbar.navbar-fixed-top{:role => "navigation"}
+    /   .container
+    /     .navbar-header
+    /       = link_to "Golf Trax", root_path, class: "navbar-brand"
+    /     .navbar-collapse.collapse
+    /       = render 'layouts/navbar'
+    /     .row.marketing
+    /       .col-lg-6
+    /         - if notice || alert
+    /           %p.notice= notice
+    /           %p.alert= alert
+    /         = yield

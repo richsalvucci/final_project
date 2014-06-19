@@ -24,16 +24,16 @@ a:hover{
   padding:5px;
 }
 
-body {
+/*body {
   padding-top: 100px;
   padding-bottom: 100px;
-}
+}*/
 
-.container_body{
+/*.container{
   width:80%;
   margin: 0 auto;
 }
-
+*/
 .output {
   display: inline-block;
   border: 1px solid #EEE;

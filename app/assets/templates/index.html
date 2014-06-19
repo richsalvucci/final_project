@@ -43,11 +43,11 @@
     <tr ng-repeat="(key, value) in data.holes">
       <td>{{key}}</td>
       <td ng-repeat="hole in value">
-        {{ hole.score }} <input class="hole_input" ng-model="hole.score">
+       <input class="hole_input" ng-model="hole.score" ng-change="hole.score">
       </td>
-      <td></td>
+      <td ng-bind="hole in value" >{{hole.score}}</td>
     </tr>
   </tbody>
 </table>
 <button class="btn btn-success" ng-click="updateScore()">Save Scores</button>
-<button class="btn btn-success" ng-click="updateScore()">Rounds</button>
+<a href="/rounds"><button class="btn btn-success">Rounds</button></a>

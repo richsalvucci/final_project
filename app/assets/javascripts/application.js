@@ -22,7 +22,8 @@
 //= require_tree .
 
 var load_javascript = function(){
-
+  
+  $('.collapse').collapse()
   $(".notice").fadeOut(1000);
   $(".alert").fadeOut(1000);
   $(".error").fadeOut(1000);

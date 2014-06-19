@@ -29,6 +29,7 @@
   = f.fields_for :holes do |hole_form|
     %br
     = hole_form.label :hole_number, "Hole"
+    = hole_form.link_to_remove "Remove this hole"
     %br
     = hole_form.text_field :hole_number, placeholder: "Hole"
     %br
@@ -46,7 +47,6 @@
     %br
     = hole_form.text_field :womens_handicap, placeholder: "Women's Handicap"
     %br
-    = hole_form.link_to_remove "Remove this hole"
   = f.link_to_add "Add a Hole", :holes
   %br
-  = f.submit 'Save Course'
+  = f.submit 'Save Course', class: "btn btn-success"
