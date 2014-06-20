@@ -9,7 +9,7 @@ class RoundsController < ApplicationController
 
   def show
     @holes = Hole.all
-    @scores = @round.scores.where(user_id: current_user)
+    @scores = @round.scores.all
   end
 
   def new
