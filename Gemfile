@@ -35,6 +35,7 @@ gem 'html2haml'
 gem 'nested_form'
 gem 'omniauth-facebook'
 gem 'jquery-ui-rails'
+gem 'cancan'
 
 
 # Use ActiveModel has_secure_password
