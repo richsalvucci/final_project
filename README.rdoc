@@ -1,5 +1,7 @@
 == README
 
+THis application should not be run without updating the Gems to newer versions.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
